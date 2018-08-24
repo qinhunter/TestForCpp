@@ -47,19 +47,23 @@ class Base;
 // function declaration
 
 class Empty {
+	// test the size of empty class
 };
 
 class HoldAnInt {
+	// test the size of class holding an empty class
 	int x = 0;
 	Empty e;
 };
 
 class InheritEmpty: public Empty {
+	// test the size of class inheriting an empty class
 	private:
 		int x = 0;
 };
 
 class ByteAlignment {
+	// test the size of class with bit region and bytealignment
 	int x = 0;
 	char c1 = 0;
 	char c2 = 0;
@@ -68,7 +72,8 @@ class ByteAlignment {
 };
 
 void testscope(int a, Empty emp) {
-	cout << "this is testscope: int a = " << a << endl;
+	// test the scope of function
+	cout << "this is ::testscope: int a = " << a << endl;
 	return;
 }
 
