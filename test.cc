@@ -50,7 +50,7 @@ class Empty {
 	// test the size of empty class
 };
 
-class HoldAnInt {
+class HoldEmptyAndInt {
 	// test the size of class holding an empty class
 	int x = 0;
 	Empty e;
@@ -60,6 +60,11 @@ class InheritEmpty: public Empty {
 	// test the size of class inheriting an empty class
 	private:
 		int x = 0;
+};
+
+class HoldRefer {
+	int i = 0;
+	int& ref = i;
 };
 
 class ByteAlignment {
@@ -143,10 +148,11 @@ void ShowClassSize(void) {
 	// show the size of empty class, class hoding empty and class inheriting empty class
 	// show the byte alignment
 	cout << "sizeof Empty = " << sizeof(class Empty) << endl;
-	cout << "sizeof HoldAnInt = " << sizeof(HoldAnInt) << endl;
+	cout << "sizeof HoldEmptyAndInt = " << sizeof(HoldEmptyAndInt) << endl;
 	cout << "sizeof InheritEmpty = " << sizeof(InheritEmpty) << endl;
 	cout << "sizeof ByteAlignment = " << sizeof(ByteAlignment) << endl;
 	cout << "sizeof Base = " << sizeof(class Base) << endl;
+	cout << "sizeof HoldRefer = " << sizeof(HoldRefer) << endl;
 }
 
 void TestConstVolatile(void) {
@@ -164,7 +170,7 @@ void TestConstVolatile(void) {
 int main() 
 {  
 	// ShowSystemSize();
-	// ShowClassSize();
+	 ShowClassSize();
 
     class Base testA(10);
 	testA.display();
