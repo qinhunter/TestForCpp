@@ -5,7 +5,7 @@
  *	gcc -c SimpleSection.c
  *
  * Windows:
- *	c1 SimpleSection.c /c za
+ *	c1 SimpleSection.c /c /Za
 */
 
 int printf( const char* format, ... );
