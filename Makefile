@@ -1,5 +1,5 @@
 .PHONY:all
-all: pragma.o test.o attribute.o const_test.o devided0.o rand.o moveinvector.o test.o struct.o setwithvector.o
+all: pragma.o test.o attribute.o const_test.o devided0.o rand.o moveinvector.o test.o struct.o setwithvector.o vectorusage.o
 
 .PHONY:clean
 clean:
@@ -32,3 +32,6 @@ struct.o:struct.c
 
 setwithvector.o:setwithvector.cc
 	@g++ -o $@ setwithvector.cc -std=c++11
+
+vectorusage.o:vectorusage.cc
+	@g++ -o $@ vectorusage.cc -std=c++11
