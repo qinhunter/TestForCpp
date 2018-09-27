@@ -1,2 +1,2 @@
 # TestCorCpp
-some test or experiments on C language or C++ language
+some tests or experiments on C language or C++ language
