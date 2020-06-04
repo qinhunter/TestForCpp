@@ -5,6 +5,7 @@ all: pragma.o test.o attribute.o const_test.o devided0.o rand.o moveinvector.o t
 clean:
 	@echo "Cleaning *.o"
 	@rm -rf *.o
+	@rm -rf output
 
 pragma.o:pragma.cc
 	@echo "g++ -o $@ pragma.cc -std=c++11"
