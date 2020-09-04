@@ -1,11 +1,17 @@
 .PHONY:all
-all: pragma.o test.o attribute.o const_test.o devided0.o rand.o moveinvector.o test.o struct.o setwithvector.o vectorusage.o
+all: pragma.o test.o attribute.o const_test.o devided0.o rand.o moveinvector.o test.o struct.o setwithvector.o vectorusage.o RefLRValue.o
 
 .PHONY:clean
 clean:
 	@echo "Cleaning *.o"
 	@rm -rf *.o
 	@rm -rf output
+
+RefLRValue.o:RefLRValue.cpp
+	@echo "g++ -o $@ RefLRValue.cpp -std=c++11"
+	@echo "g++ -o no_elide_$@ RefLRValue.cpp -std=c++11 -fno-elide-constructors"
+	@g++ -o $@ RefLRValue.cpp -std=c++11
+	@g++ -o no_elide_$@ RefLRValue.cpp -std=c++11 -fno-elide-constructors
 
 pragma.o:pragma.cc
 	@echo "g++ -o $@ pragma.cc -std=c++11"
