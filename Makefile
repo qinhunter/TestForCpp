@@ -1,5 +1,5 @@
 .PHONY:all
-all: pragma.o test.o attribute.o const_test.o devided0.o rand.o moveinvector.o test.o struct.o setwithvector.o vectorusage.o RefLRValue.o
+all: precompile.o pragma.o test.o attribute.o const_test.o devided0.o rand.o moveinvector.o test.o struct.o setwithvector.o vectorusage.o RefLRValue.o
 
 .PHONY:clean
 clean:
@@ -12,6 +12,10 @@ RefLRValue.o:RefLRValue.cpp
 	@echo "g++ -o no_elide_$@ RefLRValue.cpp -std=c++11 -fno-elide-constructors"
 	@g++ -o $@ RefLRValue.cpp -std=c++11
 	@g++ -o no_elide_$@ RefLRValue.cpp -std=c++11 -fno-elide-constructors
+
+precompile.o:precompile.cc
+	@echo "g++ -o $@ precompile.cc -std=c++11"
+	@g++ -o $@ precompile.cc -std=c++11
 
 pragma.o:pragma.cc
 	@echo "g++ -o $@ pragma.cc -std=c++11"
