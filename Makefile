@@ -6,7 +6,7 @@ C_OBJ_DIR := ./
 
 # Compilation flags
 CC := g++
-CPPFLAGS := -std=c++11
+CPPFLAGS := -std=c++17
 CFLAGS := 
 
 # Files to be compiled
