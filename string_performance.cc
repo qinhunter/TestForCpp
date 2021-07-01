@@ -17,6 +17,12 @@ const std::string& d = "part4";
 
 constexpr int test_times = 10000000;
 
+std::string string_printf() {
+    char buf[50];
+    sprintf(buf, "%s%s%s%s%s%s%s%s%s", sep.c_str(), a.c_str(), sep.c_str(), b.c_str(), sep.c_str(), c.c_str(), sep.c_str(), d.c_str(), sep.c_str());
+    return buf;
+}
+
 std::string string_add() {
     return sep + a + sep + b + sep + c + sep + d + sep;
 }
@@ -47,6 +53,7 @@ double test_func(std::function<std::string()> test_func) {
 int main() 
 {  
 
+    std::cout << "string_printf " << std::to_string(test_func(string_printf)) << std::endl;
     std::cout << "string_add " << std::to_string(test_func(string_add)) << std::endl;
     std::cout << "string_add_equal " << std::to_string(test_func(string_add_equal)) << std::endl;
     std::cout << "string_append " << std::to_string(test_func(string_append)) << std::endl;
