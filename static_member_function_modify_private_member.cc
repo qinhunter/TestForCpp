@@ -15,6 +15,12 @@ class Test{
             test->a = 2;
             std::cout << "test->a: " << test->a << std::endl;
         }
+        void modify_static_member() {
+            static int stat_int = 0;
+            std::cout << " stat_int is " << stat_int << std::endl;
+            ++stat_int;
+            std::cout << "after modify stat_int is " << stat_int << std::endl;
+        }
     private:
         int a;
 };
@@ -24,4 +30,8 @@ int main()
     // private member could not be used by outside
     // test.a = 2;
     Test::modify_private_member(&test);
+    Test test1;
+    Test test2;
+    test1.modify_static_member();
+    test2.modify_static_member();
 }
