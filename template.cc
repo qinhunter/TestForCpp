@@ -14,4 +14,4 @@ int main() {
 	printf("a.a = %d \n", a._a);
 	printf("a.b = %d \n", a._b);
 	return 0;
-} 
+}
