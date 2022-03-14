@@ -27,6 +27,11 @@ void show_rit_base(const std::vector<int>& vec) {
     }
     std::cout << std::endl;
 }
+void pop_empty_vec() {
+    std::vector<std::string> vec;
+    // vec.pop_back();
+    std::cout << "pop empty vec will core!!!" << std::endl;
+}
 
 int main(int argc, char* argv[]) {
 	vector<int> a;
@@ -42,6 +47,7 @@ int main(int argc, char* argv[]) {
 
     show_rit(b);
     show_rit_base(b);
+    pop_empty_vec();
 
 
 	return 0; 
