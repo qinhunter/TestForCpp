@@ -10,8 +10,15 @@ struct Node {
     operator bool() {
         return val != 0;
     }
+    void add() {
+        ++val;
+    }
     int val = 0;
 };
+
+void test_function_sign(const std::shared_ptr<Node>& shp) {
+    shp->add();
+}
 
 int main()
 {
@@ -39,5 +46,10 @@ int main()
     } else {
         std::cout << "not if n1" << std::endl;
     }
+
+    auto node = std::make_shared<Node>(0);
+    std::cout << "before add n " << node->val << std::endl;
+    test_function_sign(node);
+    std::cout << "after add n " << node->val << std::endl;
     return 0;
 }
