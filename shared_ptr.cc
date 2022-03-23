@@ -19,6 +19,9 @@ struct Node {
 void test_function_sign(const std::shared_ptr<Node>& shp) {
     shp->add();
 }
+void show_shp_address(const std::shared_ptr<Node>& shp) {
+    printf("%p\n", &shp);
+}
 
 int main()
 {
@@ -51,5 +54,9 @@ int main()
     std::cout << "before add n " << node->val << std::endl;
     test_function_sign(node);
     std::cout << "after add n " << node->val << std::endl;
+
+
+    printf("%p\n", &node);
+    show_shp_address(node);
     return 0;
 }
