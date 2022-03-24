@@ -1,6 +1,8 @@
 #include <iostream> 
 #include <vector>
 #include <string>
+#include <map>
+#include <unordered_map>
 
 
 
@@ -42,5 +44,6 @@ int main(int argc, char* argv[]) {
         tmp._num += 10;
         std::cout << &tmp << ": " << std::to_string(tmp._num) << std::endl;
     }
+    std::unordered_map<int, Testclass*> testclass_map;
 	return 0; 
 }
