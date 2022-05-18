@@ -29,6 +29,16 @@ public:
     int val = 0;
 };
 
+static auto cmp = [](const std::shared_ptr<Node>& a, const std::shared_ptr<Node>& b) {
+    return true;
+};
+struct InstanceJobsInfo {
+    std::optional<std::shared_ptr<Node>> running_job;
+    std::priority_queue<std::shared_ptr<Node>,
+                        std::vector<std::shared_ptr<Node>>,
+                        decltype(cmp)> waiting_jobs{cmp};
+};
+
 
 int main() 
 {  
