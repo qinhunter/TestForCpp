@@ -23,6 +23,35 @@ void show_shp_address(const std::shared_ptr<Node>& shp) {
     printf("%p\n", &shp);
 }
 
+void test_use_count1() {
+    std::cout << "test_use_count1" << std::endl;
+    int* int_p = new int(1);
+    auto a = std::shared_ptr<int>(int_p);
+    std::cout << "a.use_count " << a.use_count() << std::endl;
+    auto b = a;
+    std::cout << "a.use_count " << a.use_count()
+            << ", b.use_count " << b.use_count() << std::endl;
+    const auto& c = b;
+    std::cout << "a.use_count " << a.use_count()
+            << ", b.use_count " << b.use_count()
+            << ", c.use_count " << c.use_count() << std::endl;
+
+}
+
+void test_use_count2() {
+    std::cout << "test_use_count2" << std::endl;
+    int* int_p = new int(1);
+    auto a = std::shared_ptr<int>(int_p);
+    std::cout << "a.use_count " << a.use_count() << std::endl;
+    auto b = std::shared_ptr<int>(int_p);
+    std::cout << "a.use_count " << a.use_count()
+            << ", b.use_count " << b.use_count() << std::endl;
+    const auto& c = b;
+    std::cout << "a.use_count " << a.use_count()
+            << ", b.use_count " << b.use_count()
+            << ", c.use_count " << c.use_count() << std::endl;
+}
+
 int main()
 {
     // std::shared_ptr<std::string> shp = std::shared_ptr<std::string>(nullptr);
@@ -58,5 +87,8 @@ int main()
 
     printf("%p\n", &node);
     show_shp_address(node);
+    
+    test_use_count1();
+    test_use_count2();
     return 0;
 }
