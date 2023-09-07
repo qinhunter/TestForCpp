@@ -46,10 +46,15 @@ void test_use_count2() {
     auto b = std::shared_ptr<int>(int_p);
     std::cout << "a.use_count " << a.use_count()
             << ", b.use_count " << b.use_count() << std::endl;
-    const auto& c = b;
+    {
+        const auto& c = b;
+        std::cout << "a.use_count " << a.use_count()
+                << ", b.use_count " << b.use_count()
+                << ", c.use_count " << c.use_count() << std::endl;
+    }
     std::cout << "a.use_count " << a.use_count()
-            << ", b.use_count " << b.use_count()
-            << ", c.use_count " << c.use_count() << std::endl;
+            << ", b.use_count " << b.use_count() << std::endl;
+    exit(0);
 }
 
 int main()
