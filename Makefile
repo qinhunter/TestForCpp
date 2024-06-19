@@ -7,6 +7,7 @@ C_OBJ_DIR := ./
 # Compilation flags
 CC := g++
 CPPFLAGS := -std=c++17
+#CPPFLAGS := -std=c++17 -Werror=delete-non-virtual-dtor
 CFLAGS := 
 
 # Files to be compiled
