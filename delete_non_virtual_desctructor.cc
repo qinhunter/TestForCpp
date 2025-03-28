@@ -19,7 +19,8 @@ struct Base {
     virtual void test() {
         std::cout << "Base test" << std::endl;
     }
-    virtual ~Base() {
+    ~Base() {
+    // virtual ~Base() {
         std::cout << "Base desctruct" << std::endl;
     }
     // std::string val;
