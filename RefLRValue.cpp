@@ -48,6 +48,9 @@ Testclass make_test_class_random2(int num = 0) {
 }
 
 int main(int argc, char* argv[]) {
+    const auto& t_const_ref = make_test_class(0);
+    // auto& t_ref= make_test_class(0);
+
     Testclass t1(1);
     Testclass t2 = std::move(t1);
     Testclass t3 = make_test_class(3);

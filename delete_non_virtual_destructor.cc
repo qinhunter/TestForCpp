@@ -4,7 +4,7 @@
 #include <time.h>
 #include <unordered_map>
 
-// g++ -std=c++17 -o delete_non_virtual_dtor.o delete_non_virtual_dtor.cc -Werror=delete-non-virtual-dtor
+// g++ -std=c++17 -o delete_non_virtual_destructor.o delete_non_virtual_destructor.cc -Werror=delete-non-virtual-dtor
 
 using namespace std;
 
