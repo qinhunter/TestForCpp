@@ -39,5 +39,5 @@ class Test{
 int main() 
 {  
     Test test;
-    test.modify_static_member();
+    test.modify_member();
 }

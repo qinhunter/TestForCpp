@@ -61,7 +61,9 @@ int main()
     std::cout << "sizeof EmptyStruct " << sizeof(e) << std::endl;
     Base* a = new Derive();
     a->test();
+    std::cout << "delete a" << std::endl;
     delete a;
-    std::cout << "after delete a" << std::endl;
+    std::cout << "after delete a, check if SimpleStruct is desctructed below" << std::endl;
+    std::cout << "finish all tests!" << std::endl;
     return 0;
 }
