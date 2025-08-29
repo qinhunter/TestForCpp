@@ -35,11 +35,11 @@ public:
         std::cout << "copy =" << std::endl;
     }
     std::unique_ptr<Node> up_n;
-    std::map<int, std::vector<std::unique_ptr<Node>>> mp;
-    std::vector<std::unique_ptr<Node>> vec;
+    std::map<int, std::vector<std::unique_ptr<Node> > > mp;
+    std::vector<std::unique_ptr<Node> > vec;
     std::vector<int> i_vec;
-    std::vector<std::unique_ptr<PureVirtualClass>> pure_virtual_class_vec;
-    std::map<int, std::vector<std::unique_ptr<PureVirtualClass>>> pure_virtual_class_map; // clang could compile
+    std::vector<std::unique_ptr<PureVirtualClass> > pure_virtual_class_vec;
+    std::map<int, std::vector<std::unique_ptr<PureVirtualClass> > > pure_virtual_class_map; // clang could compile
 };
 
 int main() 
@@ -48,5 +48,8 @@ int main()
     opt = Body();
     opt->i_vec.emplace_back(1);
     
-    std::cout << "hunter test" << opt->i_vec.size() << std::endl;
+    std::cout << "after emplace_back with ->(pointer), opt i_vec.size " << opt->i_vec.size() << std::endl;
+    opt.value().i_vec.emplace_back(2);
+    std::cout << "value type " << typeid(opt.value()).name() << std::endl;
+    std::cout << "after emplace_back with value func, opt i_vec.size " << opt->i_vec.size() << std::endl;
 }
