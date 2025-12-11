@@ -40,4 +40,7 @@ int main()
 {  
     Test test;
     test.modify_member();
+    auto shp = std::make_shared<Test>();
+    const auto & shp_ref = shp;
+    shp_ref->modify_member();
 }
